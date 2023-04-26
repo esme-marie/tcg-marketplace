@@ -1,0 +1,345 @@
+html,
+body {
+  background-color: #e5e5e5;
+  margin: 0;
+  scrollbar-width: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.filter_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  height: 35px;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+}
+
+.search_options {
+  display: flex;
+}
+
+.input {
+  height: 33px;
+  width: 55%;
+  border: none;
+  outline: none;
+  background: white;
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 22px;
+  color: grey;
+  border-radius: 100px 0px 0px 100px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  position: relative;
+  height: 35px;
+  outline: none;
+  background: white;
+  padding-right: 10px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: #bcbbbb;
+  text-align: left;
+  border-left: solid 0.5px #bcbbbb;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown_last {
+  border-radius: 0px 100px 100px 0px;
+}
+
+.dropdown_item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown_item:hover {
+  background-color: #9fc3f870;
+}
+
+.dropdown_item.selected {
+  background-color: #ff4c41;
+  color: #fff;
+}
+
+.dropdown_value {
+  color: #ff4c41;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown_value.dropdown_selected_value {
+  color: unset;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  width: "100%";
+  justify-content: center;
+  margin: 40px;
+}
+
+.cards_container {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #1d1c1c;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px 150px 20px;
+}
+
+.infinite_loader {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_cart_button {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  z-index: 2;
+  background: #298bfd;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  height: 35px;
+  width: 102px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  margin-left: -51px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+
+.cart_close_button {
+  position: sticky;
+  bottom: 6%;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 2;
+  background: #fd2929;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  margin-left: -17.5px;
+  cursor: pointer;
+}
+
+.cart_total_items {
+  position: absolute;
+  top: -23px;
+  left: -13px;
+  background: #ff6363;
+  border-radius: 100px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  padding: 1.5px;
+}
+
+.cart_container {
+  position: fixed;
+  bottom: 8%;
+  left: 50%;
+  width: 100vw;
+  max-width: 400px;
+  z-index: 1;
+  margin-left: -200px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding-bottom: 15px;
+}
+
+.cart_items {
+  margin: 20px 10px -15px;
+  padding: 20px;
+  height: 35vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 48px,
+    black calc(100% - 48px),
+    transparent 100%
+  );
+}
+
+.cart_total_container {
+  height: 20vh;
+  margin: 10px 10px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.cart_clear_all {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #6a6969;
+  cursor: pointer;
+}
+
+.cart_total {
+  padding-top: 30px;
+  width: 65%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.cart_total_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart_total_cards_title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1d1c1c;
+}
+
+.cart_total_cards_text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #fd2929;
+}
+
+.cart_total_price_title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  color: #1d1c1c;
+}
+
+.cart_total_price_title_text {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: right;
+  color: #fd2929;
+}
+
+.cart_pay_button {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  background: #298bfd;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  cursor: pointer;
+}
+
+.payment_success {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #1d1c1c;
+}
+
+@media (max-width: 600px) {
+  .filter_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    height: auto;
+  }
+
+  .search_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .search_options {
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 10px 10px 0px;
+    width: 100%;
+  }
+
+  .input {
+    width: 83%;
+    text-align: center;
+    margin: 10px;
+    border-radius: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown {
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
