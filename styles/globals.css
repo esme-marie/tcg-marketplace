@@ -143,10 +143,10 @@ header {
 }
 
 .cart_close_button {
-  position: sticky;
-  bottom: 6%;
-  transform: translateX(-50%);
+  position: fixed;
+  top: 92%;
   left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   background: #fd2929;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
@@ -160,7 +160,6 @@ header {
   font-size: 12px;
   line-height: 14px;
   color: #ffffff;
-  margin-left: -17.5px;
   cursor: pointer;
 }
 
@@ -184,22 +183,25 @@ header {
 
 .cart_container {
   position: fixed;
-  bottom: 8%;
+  min-height: 65vh;
+  max-height: 70vh;
+  top: 58%;
   left: 50%;
-  width: 100vw;
+  transform: translate(-50%, -50%);
   max-width: 400px;
   z-index: 1;
-  margin-left: -200px;
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .cart_items {
   margin: 20px 10px -15px;
   padding: 20px;
-  height: 35vh;
+  max-height: 30vh;
   overflow-y: auto;
   scrollbar-width: none;
   mask-image: linear-gradient(
@@ -212,9 +214,9 @@ header {
 }
 
 .cart_total_container {
-  height: 20vh;
-  margin: 10px 10px;
-  padding: 30px 20px;
+  min-height: 15vh;
+  margin: auto;
+  padding: 10px;
   text-align: center;
 }
 
@@ -229,10 +231,8 @@ header {
 }
 
 .cart_total {
-  padding-top: 30px;
-  width: 65%;
+  padding: 30px 15px;
   margin: auto;
-  padding-bottom: 30px;
 }
 
 .cart_total_details {
@@ -290,9 +290,8 @@ header {
 }
 
 .payment_success {
-  height: 100%;
   display: flex;
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -319,18 +318,18 @@ header {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    width: 100%;
+    width: 95%;
   }
 
   .search_options {
     align-items: center;
-    justify-content: space-evenly;
-    padding: 10px 10px 10px 0px;
-    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    width: 95%;
   }
 
   .input {
-    width: 83%;
+    width: 88%;
     text-align: center;
     margin: 10px;
     border-radius: 100px;
@@ -338,7 +337,7 @@ header {
   }
 
   .dropdown {
-    width: 100%;
+    width: 85%;
     border-radius: 100px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }

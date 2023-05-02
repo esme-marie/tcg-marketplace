@@ -405,7 +405,7 @@ const HomePage = ({
           {open && (
             <>
               {paymentSuccess ? (
-                <div className="cart_container" style={{ height: "40vh" }}>
+                <div className="cart_container payment_success">
                   <div className="payment_success">
                     <Image
                       src={SuccessIcon}
@@ -416,10 +416,7 @@ const HomePage = ({
                   </div>
                 </div>
               ) : cartItem.length == 0 ? (
-                <div
-                  className="cart_container payment_success"
-                  style={{ height: "40vh" }}
-                >
+                <div className="cart_container payment_success">
                   Your cart is empty.
                 </div>
               ) : (
